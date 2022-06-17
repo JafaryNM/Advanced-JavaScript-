@@ -38,7 +38,7 @@
  * 
  * 
  * 
- */
+
 
 
 // Funciton Constuctor 
@@ -67,6 +67,131 @@ john.calcAge();
 
 var jane= new Person('jane',2000, 'Student')
 jane.calcAge()
+
+// Return True to check if it belongs particular john.__proto__===Person.prototype
+// Use Object Prototype to john objects
+
+ */
+
+
+
+
+// Creating Objects  with Object create 
+
+var personProto={
+
+    calculateAge:function(){
+
+        console.log(2020- this.birthYear);
+
+    }
+};
+
+var john=Object.create(personProto);
+john.name='john';
+john.birthYear=1990;
+john.job='Teacher';
+
+
+var jane=Object.create(personProto);
+jane.name='jane';
+jane.birthYear=2000;
+jane.job='Student';
+
+
+// Special way of creat object
+
+var methew=Object.create(personProto,{
+
+    name:{value:'methew'},
+    birthYear:{value:1990},
+    job:{value:'teacher'}
+
+});
+
+// Speficed which one is best way of create object then specified about complex inheritance
+// Structure 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
 
 
 
