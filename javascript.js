@@ -111,7 +111,7 @@ var methew=Object.create(personProto,{
 // Speficed which one is best way of create object then specified about complex inheritance
 // Structure 
 
- */
+
 
 // Comparitive between primitive and object in JavaScript
 
@@ -155,6 +155,58 @@ change(age,object1);
 
 console.log(age)          // remain same values of functions
 console.log(object1.city) // reference to object of function
+
+
+
+
+// OBJECT FUNCTION JAVASCRIPT
+
+* A function is an instance of the object type
+* Function behave like objects
+* We can store function in variable
+* We can pass a function as an arguments in another functions
+* We can return function to another functions
+
+
+
+
+ */
+
+
+// PASSING  FUNCTIONS AS ARGUMENTS 
+
+
+var years= [1900,1965,1937,2005,1998];
+
+function arrayCalc(arr,fn){
+    var arrRes =[];
+    for(var i=0; i<arr.length; i++){
+
+        arrRes.push(fn(arr[i]));
+
+    };
+    return arrRes;
+};
+
+function  calculateAge(el){
+   
+    return 2016-el;  
+
+};
+
+var ages= arrayCalc(years, calculateAge)
+console.log(ages)
+
+
+
+
+
+
+
+
+
+
+
 
 
 
