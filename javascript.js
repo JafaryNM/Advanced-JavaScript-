@@ -71,7 +71,6 @@ jane.calcAge()
 // Return True to check if it belongs particular john.__proto__===Person.prototype
 // Use Object Prototype to john objects
 
- */
 
 
 
@@ -111,6 +110,58 @@ var methew=Object.create(personProto,{
 
 // Speficed which one is best way of create object then specified about complex inheritance
 // Structure 
+
+ */
+
+// Comparitive between primitive and object in JavaScript
+
+// Primitive  Datatypes
+
+var a=23;
+var b=a;
+b=46;
+console.log(b) // return 46
+console.log(a) // return 23
+
+// Object Datatypes
+
+var obj1={
+    name:'jafary',
+    age:29
+};
+
+var obj2=obj1;
+
+obj1.age=30;
+
+console.log(obj1.age) // return 30
+console.log(obj2.age) // return 30
+
+
+// Function 
+
+var age=27;
+
+var object1={
+    name:'jafary',
+    city:'arusha'
+}
+
+function change(a,b){
+    a=30;
+    b.city='Dar-es-salaam'
+}
+change(age,object1);
+
+console.log(age)          // remain same values of functions
+console.log(object1.city) // reference to object of function
+
+
+
+
+
+
+
 
 
 
