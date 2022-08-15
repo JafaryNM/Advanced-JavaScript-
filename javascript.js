@@ -229,7 +229,6 @@ InterviewQuestion('Farmer')('Juliana')
 
 
 
- */
 
 // IMMEDIATELY INVOKE FUNCTION  EXPRESSION 
 
@@ -255,6 +254,69 @@ game();
     var score=Math.random()*10;
     console.log(score>=8-goodluck);
 })(5);
+
+
+ */
+
+
+// Closure 
+
+// Global Excution Context
+function reteirement(retierementAge){ // reteirement Scope [ reteirementAge(), a]
+    var a='year remained until retirement';
+
+     return function(yearOfBirth)  // New Excution Context [retierementAgeUs] Hence 
+                                   // Hence Magic happen you can use [ reteirementAge(), a]
+     {
+        var age=2029-yearOfBirth;
+        console.log(retierementAge-age) + " " +a;
+     }
+}
+
+var retiermentAgeUs=reteirement(65);
+retiermentAgeUs(1995);
+var retierementAgeGermany=reteirement(66);
+retierementAgeGermany(1997);
+var retierementAgeIceland=reteirement(67);
+retierementAgeIceland(1970);
+
+
+/* ################# CLOSURE SUMMARY #################
+
+-- Closure inner function has always access varible and parametes
+   of its outer function, even after the outer function has returned
+
+
+#################### PROBLEM OF INTERVIEW QUESTION WITH HELPS OF CLOSUER ###############
+
+*/
+
+function InterviewQuestion(job){
+
+    return function(name){
+        if (job==='designer'){
+
+            console.log(name +" What is UI and UX designing?");
+
+        }
+        else if (job==='teacher'){
+            console.log(name + " What subject are you specilized?");
+        }
+
+        else{
+            console.log(name + " Sorry your job is not there find another job");
+        }
+    }
+
+}
+
+InterviewQuestion('teacher')('john')
+
+
+
+
+
+
 
 
 
