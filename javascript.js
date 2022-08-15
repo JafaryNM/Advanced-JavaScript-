@@ -170,7 +170,6 @@ console.log(object1.city) // reference to object of function
 
 
 
- */
 
 
 // PASSING  FUNCTIONS AS ARGUMENTS 
@@ -195,7 +194,49 @@ function  calculateAge(el){
 };
 
 var ages= arrayCalc(years, calculateAge)
-console.log(ages)
+co
+ */
+
+// Function Return Function 
+
+function InterviewQuestion(job){
+    
+    if (job==='designer'){
+        return function(name){
+            console.log(name + ", Can you explain what is UX design is ?");
+        }
+    }
+    else if (job==='teacher'){
+        return function (name){
+             console.log(name + ", What subject your are teaching for?");
+        }
+    }
+    else{
+        return function(name){
+            console.log(name +", Your job is not there please choose another job");
+        }
+    }
+}
+
+var teacherQuestion=InterviewQuestion('teacher');
+teacherQuestion('John');
+var  designerQuestion=InterviewQuestion('designer');
+designerQuestion('jafary');
+
+
+InterviewQuestion('teacher')('Mary');
+InterviewQuestion('Farmer')('Juliana')
+
+
+
+
+
+
+
+
+
+
+
 
 
 
