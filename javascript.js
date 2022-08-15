@@ -194,8 +194,8 @@ function  calculateAge(el){
 };
 
 var ages= arrayCalc(years, calculateAge)
-co
- */
+
+
 
 // Function Return Function 
 
@@ -226,6 +226,53 @@ designerQuestion('jafary');
 
 InterviewQuestion('teacher')('Mary');
 InterviewQuestion('Farmer')('Juliana')
+
+
+
+ */
+
+// IMMEDIATELY INVOKE FUNCTION  EXPRESSION 
+
+
+function game(){
+    var score=Math.random()* 10;
+    console.log(score>=5);
+}
+game();
+
+
+// Solving Problem using immediately invoke function expression
+
+
+(function(){
+
+    var score=Math.random()*10;
+    console.log(score>=7);
+
+})();
+
+(function(goodluck){
+    var score=Math.random()*10;
+    console.log(score>=8-goodluck);
+})(5);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
