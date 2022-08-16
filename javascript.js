@@ -289,7 +289,7 @@ retierementAgeIceland(1970);
 
 #################### PROBLEM OF INTERVIEW QUESTION WITH HELPS OF CLOSUER ###############
 
-*/
+
 
 function InterviewQuestion(job){
 
@@ -313,11 +313,67 @@ function InterviewQuestion(job){
 InterviewQuestion('teacher')('john')
 
 
+*/
+
+/** BIND CALL AND APPLY
+ * 
+ * 
+ */
 
 
+var john={
+    name:'John',
+    age:26,
+    job:'Teacher',
+    presentation:function(style,timeOfDay){
+        if (style=='formal'){
+            console.log("Goodmornig " + timeOfDay + " Ladies & Gentlemen: I\`m " + this.name + " I\`m " + this.job + " I have  " + this.age + ' years old')
+        }
+        else if(style=='friendly'){
+
+            console.log("Hey there What\`s Up " + timeOfDay + " Ladies & Gentlemen: I\`m " + this.name + " I\`m " + this.job + " I have  " + this.age + ' years old')
+        }
+        else{
+
+        }
+    }
+
+};
+
+var jafary={
+    name:'Jafary',
+    age:27,
+    job:'Designer'
+}
+var methew={
+    name:'Methew',
+    age:26,
+    job:'Engineer'
+}
+var innocent={
+    name:'Innocent',
+    age:28,
+    job:'Telecommunication Engineer'
+}
+
+// USING CALL METHOD TO USE ANOTHER OBJECTS\
+
+john.presentation.call(jafary, 'friendly','afternoon'); // Call('object_name', argrument_object_fn)
+
+// USING APPLY METHOD TO USE ANOTHER OBJECTS
+john.presentation.apply(methew,['formal', 'Evening']) // apply('object_name', arrays_object_fn)
+
+john.presentation('formal','Morning');
+
+// USING BINDING METHOD TO USE ANOTHER OBJECTS
+
+var johnFriendly=john.presentation.bind(john, 'formal') // bind ('object', 'argruments_fn')
+johnFriendly('Morning');
+johnFriendly('Night');
 
 
-
+var innocentFriendly=john.presentation.bind(innocent, 'friendly');
+innocentFriendly('Morning');
 
 
 
